@@ -8,9 +8,6 @@ productCategory.push(
     { 'id': 5, category: 'Higiene', status: true, products: [{ 'id': 1, name: 'Sabonete', price: '3.00' }, { 'id': 2, name: 'Shampoo', price: '8.00' }, { 'id': 3, name: 'Condicionador', price: '10.00' }] }
 );
 
-
-
-
 // Percorrer a lista e mostrar no console só o "nome dos produtos" da categoria "Eletrônicos". - Feito
 
 const productName = productCategory.filter(nome => {
@@ -21,7 +18,6 @@ const productName = productCategory.filter(nome => {
     });
 });
 
-
 // Percorrer a lista e mostrar no console só o "nome das categorias" com produtos com preço menor que 10. - Feito
 
 const categoryNameShow = productCategory.map(nameCategory => {
@@ -29,14 +25,10 @@ const categoryNameShow = productCategory.map(nameCategory => {
         return allProductsPrice.price;
     }).filter(priceLess => {
         return priceLess < 10;
-    }).slice(0,1).map(() => {
+    }).slice(0, 1).map(() => {
         return nameCategory.category;
     })
 })
-
-
-
-
 
 // Percorrer a lista e mostrar no console só os produtos das categorias desativadas.
 
@@ -52,15 +44,35 @@ const categoryDisabled = productCategory.filter(allCategories => {
 // Percorrer a lista e adicionar na categoria a quantidade de produtos de cada categoria.
 
 
-productCategory.forEach(categories => {
-    categories.quantidade = 3;
-})
+const addQuantity = productCategory.map(quantityAdd => {
 
+
+    const categoriesName = productCategory.map(product => {
+        return product.products.map(productsArray => {
+            return productsArray.id;
+        });
+    })
+
+    return {
+        id: quantityAdd.id,
+        category: quantityAdd.category,
+        status: quantityAdd.status,
+        products: quantityAdd.products,
+        quantidade: categoriesName
+    }
+
+});
+
+const numProducts = addQuantity.map(quantityProducts=>({
+    id: quantityProducts.id,
+    category: quantityProducts.category,
+    numProduct: quantityProducts.products.length
+}))
 
 
 
 console.log(productName)
 console.log(categoryNameShow)
 console.log(categoryDisabled)
-console.log(productCategory)
+console.table(numProducts)
 
