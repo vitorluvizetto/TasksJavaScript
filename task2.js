@@ -1,17 +1,36 @@
+
+// Criar uma lista vazia de "categoria de produtos" (com id, nome, status (se é ativo ou inativo))
 const productCategory = []
 
+// adicionar 5 categorias.
 productCategory.push(
-    { 'id': 1, category: 'Eletronicos', status: true, products: [{ 'id': 1, name: 'PS5', price: '1' }, { 'id': 2, name: 'RTX 2080', price: '500.00' }, { 'id': 3, name: 'RTX 3090', price: '500.00' }] },
-    { 'id': 2, category: 'Limpeza', status: false, products: [{ 'id': 1, name: 'Desinfetante', price: '10' }, { 'id': 2, name: 'Clorofina', price: '5.00' }] },
-    { 'id': 3, category: 'Alimentos', status: true, products: [{ 'id': 1, name: 'Macarrão', price: '2' }] },
-    { 'id': 4, category: 'Lazer', status: false, products: [{ 'id': 1, name: 'Baralho', price: '3' }, { 'id': 2, name: 'Ping Pong', price: '30.00' }] },
-    { 'id': 5, category: 'Higiene', status: true, products: [{ 'id': 1, name: 'Sabonete', price: '3' }] }
+    { 'id': 1, category: 'Eletronicos', status: true },
+    { 'id': 2, category: 'Limpeza', status: false },
+    { 'id': 3, category: 'Alimentos', status: true },
+    { 'id': 4, category: 'Lazer', status: false, },
+    { 'id': 5, category: 'Higiene', status: true, }
 );
 
 
+//     Criar uma lista vazia de "produtos" (com id, nome e preço) 
+const products = []
+
+//e adicionar 3 produtos - Feito
+products.push(
+    { 'id': 1, name: 'PS5', price: '1' },
+    { 'id': 2, name: 'RTX 2080', price: '500.00' },
+    { 'id': 3, name: 'RTX 3090', price: '500.00' },
+    { 'id': 4, name: 'Desinfetante', price: '10' },
+    { 'id': 5, name: 'Clorofina', price: '5.00' },
+    { 'id': 6, name: 'Macarrão', price: '2.00' },
+    { 'id': 7, name: 'Baralho', price: '3.00' },
+    { 'id': 8, name: 'Ping Pong', price: '30.00' },
+    { 'id': 9, name: 'Sabonete', price: '3.00' }
+)
 
 
-// Percorrer a lista e mostrar no console só o "nome dos produtos" da categoria "Eletrônicos". - Feito
+
+//     Percorrer a lista e mostrar no console só o "nome dos produtos" da categoria "Eletrônicos".
 
 const productName = productCategory.filter(nome => {
     return nome.category === 'Eletronicos';
@@ -22,7 +41,7 @@ const productName = productCategory.filter(nome => {
 });
 
 
-// Percorrer a lista e mostrar no console só o "nome das categorias" com produtos com preço menor que 10. - Feito
+//     Percorrer a lista e mostrar no console só o "nome das categorias" com produtos com preço menor que 10.
 
 const categoryNameShow = productCategory.map(nameCategory => {
     return nameCategory.products.map(allProductsPrice => {
@@ -35,7 +54,7 @@ const categoryNameShow = productCategory.map(nameCategory => {
 
 })
 
-// Percorrer a lista e mostrar no console só os produtos das categorias desativadas.
+//     Percorrer a lista e mostrar no console só os produtos das categorias desativadas.
 
 const categoryDisabled = productCategory.filter(allCategories => {
     return allCategories.status === false;
@@ -46,7 +65,7 @@ const categoryDisabled = productCategory.filter(allCategories => {
 });
 
 
-// Percorrer a lista e adicionar na categoria a quantidade de produtos de cada categoria.
+//     Percorrer a lista e adicionar na categoria a quantidade de produtos de cada categoria.
 
 
 productCategory.forEach(categories => {

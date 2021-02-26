@@ -8,12 +8,12 @@ Exercicio (tem que ser criados dados que supram as condições) - Feito
     Percorrer a lista e mostrar no console só o "nome das categorias" com produtos com preço menor que 10. - Feito
     Percorrer a lista e mostrar no console só os produtos das categorias desativadas. - Feito
     Percorrer a lista e adicionar na categoria a quantidade de produtos de cada categoria. - Feito
-3 - Criar uma lista vazia de "categoria de produtos" (com id, nome, status (se é ativo ou inativo)) e adicionar 5 categorias.
-    Na lista "categoria de produtos" adicionar para cada uma 3 produtos (com id, nome e preço)
-    Percorrer a lista e mostrar no console só o "nome dos produtos" da categoria "Eletrônicos".
-    Percorrer a lista e mostrar no console só o "nome das categorias" com produtos com preço menor que 10.
-    Percorrer a lista e mostrar no console só os produtos das categorias desativadas.
-    Percorrer a lista e adicionar na categoria a quantidade de produtos de cada categoria.
+3 - Criar uma lista vazia de "categoria de produtos" (com id, nome, status (se é ativo ou inativo)) e adicionar 5 categorias. - Feito
+    Na lista "categoria de produtos" adicionar para cada uma 3 produtos (com id, nome e preço) - Feito
+    Percorrer a lista e mostrar no console só o "nome dos produtos" da categoria "Eletrônicos". - Feito
+    Percorrer a lista e mostrar no console só o "nome das categorias" com produtos com preço menor que 10. - Feito
+    Percorrer a lista e mostrar no console só os produtos das categorias desativadas. - Feito
+    Percorrer a lista e adicionar na categoria a quantidade de produtos de cada categoria. - Feito
 MAP, FILTER
 4 - Verficar se eles usaram map. filter, e se não refatorar o 3 e usar
 CALLBACK
