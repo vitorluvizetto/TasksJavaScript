@@ -48,9 +48,7 @@ const addQuantity = productCategory.map(quantityAdd => {
 
 
     const categoriesName = productCategory.map(product => {
-        return product.products.map(productsArray => {
-            return productsArray.id;
-        });
+        return product.products;
     })
 
     return {
@@ -63,11 +61,10 @@ const addQuantity = productCategory.map(quantityAdd => {
 
 });
 
-const numProducts = addQuantity.map(quantityProducts=>({
-    id: quantityProducts.id,
+const numProducts = addQuantity.map(quantityProducts => ({
     category: quantityProducts.category,
     numProduct: quantityProducts.products.length
-}))
+}));
 
 
 

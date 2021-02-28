@@ -17,15 +17,15 @@ const products = []
 
 //e adicionar 3 produtos - Feito
 products.push(
-    { 'id': 1, name: 'PS5', price: '1' },
-    { 'id': 2, name: 'RTX 2080', price: '500.00' },
-    { 'id': 3, name: 'RTX 3090', price: '500.00' },
-    { 'id': 4, name: 'Desinfetante', price: '10' },
-    { 'id': 5, name: 'Clorofina', price: '5.00' },
-    { 'id': 6, name: 'Macarrão', price: '2.00' },
-    { 'id': 7, name: 'Baralho', price: '3.00' },
-    { 'id': 8, name: 'Ping Pong', price: '30.00' },
-    { 'id': 9, name: 'Sabonete', price: '3.00' }
+    { 'id': 1, name: 'PS5', price: '1.00', category: 'Eletronicos' },
+    { 'id': 2, name: 'RTX 2080', price: '500.00', category: 'Eletronicos' },
+    { 'id': 3, name: 'RTX 3090', price: '500.00', category: 'Eletronicos' },
+    { 'id': 4, name: 'Desinfetante', price: '10.00', category: 'Limpeza' },
+    { 'id': 5, name: 'Clorofina', price: '5.00', category: 'Limpeza' },
+    { 'id': 6, name: 'Macarrão', price: '2.00', category: 'Alimentos' },
+    { 'id': 7, name: 'Baralho', price: '3.00', category: 'Lazer' },
+    { 'id': 8, name: 'Ping Pong', price: '30.00', category: 'Lazer' },
+    { 'id': 9, name: 'Sabonete', price: '3.00', category: 'Higiene' }
 )
 
 
