@@ -32,51 +32,76 @@ products.push(
 
 //     Percorrer a lista e mostrar no console só o "nome dos produtos" da categoria "Eletrônicos".
 
-const productName = productCategory.filter(nome => {
-    return nome.category === 'Eletronicos';
-}).map(allProducts => {
-    return allProducts.products.map(productSubName => {
-        return productSubName.name;
-    });
-});
+const categoryName = productCategory.slice(0, 1).map(nameCat => {
+    const productName = products.filter(productsCat => {
+        return productsCat.category === 'Eletronicos';
+    })
+
+    const compareProdCat = productName.filter(prodCat => {
+        return prodCat.category === nameCat.category;
+    }).map(nameCompare => {
+        return nameCompare.name;
+    })
+
+    // return console.table(compareProdCat);
+
+})
 
 
-//     Percorrer a lista e mostrar no console só o "nome das categorias" com produtos com preço menor que 10.
+// Percorrer a lista e mostrar no console só o "nome das categorias" com produtos com preço menor que 10.
 
 const categoryNameShow = productCategory.map(nameCategory => {
-    return nameCategory.products.map(allProductsPrice => {
-        return allProductsPrice.price;
-    }).filter(priceLess => {
-        return priceLess < 10;
-    }).map(nameList => {
-        return nameCategory.category;
+
+    const compareProdCat = products.filter(prodCat => {
+        return prodCat.category === nameCategory.category;
+    }).filter(nameCompare => {
+        return nameCompare.price < 10;
     })
+
+    // return console.log(compareProdCat);
 
 })
 
 //     Percorrer a lista e mostrar no console só os produtos das categorias desativadas.
 
-const categoryDisabled = productCategory.filter(allCategories => {
-    return allCategories.status === false;
-}).map(allProducts => {
-    return allProducts.products.map(productSubName => {
-        return productSubName.name;
-    });
-});
+const categoryDisabled = products.map(allCategories => {
+    const verifyStatus = productCategory.filter(prodStatus => {
+        return prodStatus.status === false;
+    }).filter(compareProdCat => {
+        return compareProdCat.category === allCategories.category;
+    }).map(() => {
+        return allCategories.name;
+    })
 
-
-//     Percorrer a lista e adicionar na categoria a quantidade de produtos de cada categoria.
-
-
-productCategory.forEach(categories => {
-    categories.quantidade = 5;
+    // return console.log(verifyStatus);
 })
 
 
+// Percorrer a lista e adicionar na categoria a quantidade de produtos de cada categoria.
 
 
-console.log(productName)
-console.log(categoryNameShow)
-console.log(categoryDisabled)
-console.log(productCategory)
+const addQuantity = productCategory.map(category => {
+
+
+    const productCompare = products.filter(productsCatName => {
+        return productsCatName.category === category.category;
+    })
+
+    return {
+        id: category.id,
+        category: category.category,
+        status: category.status,
+        productsName: productCompare
+    }
+
+});
+
+const quantityNumber = addQuantity.map(category => ({
+    id: category.id,
+    category: category.category,
+    quantityProducts: category.productsName.length,
+}));
+
+
+console.table(quantityNumber)
 
