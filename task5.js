@@ -11,4 +11,4 @@ const databaseInsert = function (data, callback) {
     }, 0);
 };
 ///////////////////////
-databaseInsert({meuobjeto: "a"}, function() {console.log("lista: ", list)});
+databaseInsert({ meuobjeto: "a" }, () => { console.log("lista: ", list) });

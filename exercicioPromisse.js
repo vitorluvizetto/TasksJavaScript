@@ -37,6 +37,10 @@ const karina = {
  * ****/
 
 
+
+
+// Método padrão que desenvolvi.
+
 loginApi(william.username, william.password).then((result) => {
     return loginsOk.push(result);
 }).catch((err) => {
@@ -67,3 +71,62 @@ function waitPush() {
 waitPush();
 
 
+
+
+
+//Método refatorado encadeado;
+
+// loginApi(william.username, william.password).then((result) => {
+//     return loginsOk.push(result);
+// }).catch((err) => {
+//     return loginsError.push(err);
+// }).then(() => {
+
+//     loginApi(victor.username, victor.password).then((result) => {
+//         return loginsOk.push(result);
+//     }).catch((err) => {
+//         return loginsError.push(err);
+//     }).then(() => {
+//         loginApi(karina.username, karina.password).then((result) => {
+//             return loginsOk.push(result);
+//         }).catch((err) => {
+//             return loginsError.push(err);
+//         }).then(() => {
+//             return console.log(`${loginsOk} ~ ${loginsError}`)
+//         });
+
+//     });
+// });
+
+
+
+//Método padrão que desenvolvi.
+
+// loginApi(william.username, william.password).then((result) => {
+//     return loginsOk.push(result);
+// }).catch((err) => {
+//     return loginsError.push(err);
+// });
+
+
+// loginApi(victor.username, victor.password).then((result) => {
+//     return loginsOk.push(result);
+// }).catch((err) => {
+//     return loginsError.push(err);
+// });
+
+// loginApi(karina.username, karina.password).then((result) => {
+//     return loginsOk.push(result);
+// }).catch((err) => {
+//     return loginsError.push(err);
+// });
+
+
+// function waitPush() {
+//     setTimeout(() => {
+//         console.log(loginsOk);
+//         console.log(loginsError);
+//     }, 2000)
+// }
+
+// waitPush();

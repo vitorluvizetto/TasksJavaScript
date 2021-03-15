@@ -1,12 +1,12 @@
-const loginApi = async (username, password) => {
+const loginApi = (username, password) => new Promise((resolve, reject) => {
     if ((username === "william" && password == "123456") ||
         (username === "victor" && password == "654321") ||
         (username === "karina" && password == "558877")) {
-        await loginsOk.push('login.ok.' + username);
+        resolve('login.ok.' + username);
     } else {
-        await loginsError.push('invalid.password.for.' + username);
+        reject('invalid.password.for.' + username);
     }
-}
+})
 
 const loginsOk = [];
 const loginsError = [];
@@ -37,11 +37,33 @@ const karina = {
  * ****/
 
 
+async function exibir() {
+    try {
+        const result = await loginApi(william.username, william.password)
+        loginsOk.push(result);
+    } catch (error) {
+        loginsError.push(error);
+    }
 
-loginApi(william.username, william.password);
-loginApi(victor.username, victor.password);
-loginApi(karina.username, karina.password);
+    try {
+        const resultVictor = await loginApi(victor.username, victor.password)
+        loginsOk.push(resultVictor);
+    } catch (error) {
+        loginsError.push(error);
+    }
+
+    try {
+        const resultKarina = await loginApi(karina.username, karina.password)
+        loginsOk.push(resultKarina);
+    } catch (error) {
+        loginsError.push(error);
+    }
+
+    console.log(loginsOk)
+    console.log(loginsError);
+}
+
+exibir();
 
 
-console.log(loginsOk)
-console.log(loginsError);
+
